@@ -1,0 +1,90 @@
+.Video {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.Video .background {
+	position: absolute;
+	top: -3rem;
+	left: -3rem;
+	width: 120%;
+	height: 120%;
+	z-index: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: none;
+	filter: blur(1.5rem);
+	opacity: 0.3;
+}
+
+.Video .content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: contain;
+}
+
+.Video .details {
+	max-width: 1300px;
+	font-size: 80px;
+	margin-bottom: 1.6em;
+	margin-left: 0.8em;
+	text-align: right;
+}
+
+.Video .artist,
+.Video .title {
+	font-family: 'Antenna-BlackItalic';
+}
+
+.Video .artist {
+	font-size: 1em;
+}
+
+.Video .title {
+	font-size: 1.7em;
+}
+
+.Video .features {
+	font-family: 'Antenna-RegularItalic';
+	font-size: 0.85em;
+}
+
+.Video .release {
+	font-family: 'Antenna-LightItalic';
+	font-size: 0.75em;
+	margin-top: 1em;
+}
+
+.Video .release span {
+	font-family: 'Antenna-BlackItalic';
+}
+
+.Video .date {
+	font-family: 'Antenna-LightItalic';
+	font-size: 0.75em;
+	margin-top: 1em;
+}
+
+.Video .date span {
+	font-family: 'Antenna-BoldItalic';
+}
+
+.Video .cat {
+	font-family: 'Antenna-LightItalic';
+	font-size: 0.75em;
+}
+
+.Video .cat span {
+	font-family: 'Antenna-BoldItalic';
+}

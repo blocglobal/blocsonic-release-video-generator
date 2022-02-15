@@ -1,0 +1,66 @@
+.ThisDay {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-size: cover;
+}
+
+.ThisDay .cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.ThisDay .cover img {
+	width: 100%;
+	height: 100%;
+}
+
+.ThisDay .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+
+.ThisDay .introContent {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 7rem;
+	font-family: 'Antenna-LightItalic';
+	text-transform: uppercase;
+}
+
+.ThisDay .introContent hr {
+	margin: 0.5rem 0 0.25rem;
+}
+
+.ThisDay .introContent .year {
+	font-family: 'Antenna-BlackItalic';
+	font-size: 16rem;
+}
+
+.ThisDay .logoContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

@@ -1,0 +1,53 @@
+{
+	"name": "blocsonic-release-video-generator",
+	"version": "1.0.0",
+	"description": "A template/preset that utilizes Remotion to generate all required promotional and youtube videos for a release using configuration data.",
+	"scripts": {
+		"start": "remotion preview src/Youtube.jsx --props='{\"index\": 0}'",
+		"start:social": "remotion preview src/Social.jsx --props='{\"index\": 0, \"type\": \"now\"}'",
+		"start:thisday": "remotion preview src/ThisDay.jsx --props='{\"index\": 0}'",
+		"build:youtube": "remotion render src/Youtube.jsx youtube out/youtube-0.mp4 --props='{\"index\": 0}'",
+		"build:social": "npm run build:social:now",
+		"build:thisday": "remotion render src/ThisDay.jsx thisday out/thisday-0.mp4 --props='{\"index\": 0}'",
+		"build:social:now": "remotion render src/Social.jsx social out/social-0.mp4 --props='{\"index\": 0, \"type\": \"now\"}'",
+		"build:social:tomorrow": "remotion render src/Social.jsx social out/social-0.mp4 --props='{\"index\": 0, \"type\": \"tomorrow\"}'",
+		"build:social:friday": "remotion render src/Social.jsx social out/social-0.mp4 --props='{\"index\": 0, \"type\": \"friday\"}'",
+		"still": "remotion still --frame=${FRAME:-0} src/Youtube.jsx youtube out/still-0.png --props='{\"index\": 0}'",
+		"build": "npm run build:youtube",
+		"all": "node -r esm scripts/all.js",
+		"promos": "node -r esm scripts/promos.js",
+		"thisday": "node -r esm scripts/thisday.js",
+		"videos": "node -r esm scripts/videos.js",
+		"stills": "node -r esm scripts/stills.js",
+		"lint": "eslint src --ext ts,tsx,js,jsx && tsc",
+		"upgrade": "npm install @remotion/bundler @remotion/cli @remotion/eslint-config @remotion/renderer remotion"
+	},
+	"repository": {},
+	"license": "UNLICENSED",
+	"dependencies": {
+		"@remotion/bundler": "^2.6.9",
+		"@remotion/cli": "^2.6.9",
+		"@remotion/eslint-config": "^2.6.9",
+		"@remotion/renderer": "^2.6.9",
+		"autoprefixer": "^10.4.2",
+		"classnames": "^2.3.1",
+		"color-thief-react": "^2.1.0",
+		"eslint": "^7.15.0",
+		"esm": "^3.2.25",
+		"get-average-color": "^0.0.6",
+		"hexsorter": "^1.5.0",
+		"postcss": "^8.4.5",
+		"postcss-loader": "^6.2.1",
+		"postcss-preset-env": "^7.2.3",
+		"prettier": "^2.2.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"remotion": "^2.6.9",
+		"slug": "^5.2.0",
+		"typescript": "4.4.2"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.0",
+		"@types/web": "^0.0.46"
+	}
+}
