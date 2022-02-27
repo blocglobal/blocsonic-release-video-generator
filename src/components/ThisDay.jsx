@@ -11,9 +11,11 @@ import Grain from './Grain';
 import BlocsonicCom from './BlocsonicCom';
 import BlocglobalLogo from './BlocglobalLogo';
 import BlocsonicLogo from './BlocsonicLogo';
+import { parseLength } from '../utility/time';
+import data from '../data';
 import './ThisDay.css';
 
-const ThisDay = ({ year, averageColor, audioFrame, palette }) => {
+const ThisDay = ({ index, year, averageColor, audioFrame, palette }) => {
 	const background = staticFile('/bumper.png');
 	const cover = staticFile('/cover.jpg');
 	const frame = useCurrentFrame();
@@ -35,7 +37,14 @@ const ThisDay = ({ year, averageColor, audioFrame, palette }) => {
 	const smallCoverSlideStartFrame = coverSlideEndFrame + Math.round(fps * 0.5);
 	const smallCoverSlideEndFrame = smallCoverSlideStartFrame + 5;
 
-	const outroStartFrame = 1500;
+	const lengthInFrames = parseLength(
+		data.tracks[index].social.start,
+		data.tracks[index].social.end,
+		false,
+		fps
+	).length.frames;
+
+	const outroStartFrame = lengthInFrames - 270;
 	const outroEndFrame = outroStartFrame + 7;
 
 	const comOpacity = interpolate(

@@ -50,12 +50,18 @@ export const ThisDayComposition = ({ index }) => {
 		numberOfSamples: 1,
 	});
 
-	const lengthInFrames = parseLength('0:00', '0:59', false, fps).length.frames;
+	const lengthInFrames = parseLength(
+		data.tracks[index].social.start,
+		data.tracks[index].social.end,
+		false,
+		fps
+	).length.frames;
 
 	return (
 		<>
 			<AbsoluteFill style={{ backgroundColor: '#000000' }}>
 				<ThisDay
+					index={index}
 					year={year}
 					averageColor={color}
 					audioFrame={visualization[0]}

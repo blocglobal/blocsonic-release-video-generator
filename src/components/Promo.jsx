@@ -14,9 +14,10 @@ import PromoCopy from './PromoCopy';
 import BlocsonicCom from './BlocsonicCom';
 import Grain from './Grain';
 import { parseLength } from '../utility/time';
+import data from '../data';
 import './Promo.css';
 
-const Promo = ({ audioFrame, averageColor, type, palette }) => {
+const Promo = ({ index, audioFrame, averageColor, type, palette }) => {
 	const background = staticFile('/bumper.png');
 	const cover = staticFile('/cover.jpg');
 	const frame = useCurrentFrame();
@@ -25,7 +26,12 @@ const Promo = ({ audioFrame, averageColor, type, palette }) => {
 
 	const easing = Easing.bezier(0.37, 0, 0.63, 1);
 
-	const lengthInFrames = parseLength('0:00', '0:59', false, fps).length.frames;
+	const lengthInFrames = parseLength(
+		data.tracks[index].social.start,
+		data.tracks[index].social.end,
+		false,
+		fps
+	).length.frames;
 
 	const coverSize = interpolate(
 		frame,
