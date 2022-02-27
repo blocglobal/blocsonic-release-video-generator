@@ -25,7 +25,12 @@ export const YoutubeComposition = ({ index }) => {
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
 	const audioData = useAudioData(audio);
-	const { data: palette } = usePalette(cover, 5, 'hex');
+
+	let { data: palette } = usePalette(cover, 5, 'hex');
+
+	if (!palette || palette.length === 0) {
+		palette = ['#FFFFFF', '#EEEEEE', '#CCCCCC', '#444444', '#222222'];
+	}
 
 	useEffect(() => {
 		async function getColor() {

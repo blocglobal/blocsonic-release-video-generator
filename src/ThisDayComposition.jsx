@@ -24,7 +24,11 @@ export const ThisDayComposition = ({ index }) => {
 	const { fps } = useVideoConfig();
 	const audioData = useAudioData(audio);
 
-	const { data: palette } = usePalette(cover, 10, 'hex');
+	let { data: palette } = usePalette(cover, 10, 'hex');
+
+	if (!palette || palette.length === 0) {
+		palette = ['#FFFFFF', '#EEEEEE', '#CCCCCC', '#444444', '#222222'];
+	}
 
 	const { year } = data.release;
 
