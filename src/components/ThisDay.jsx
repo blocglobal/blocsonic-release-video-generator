@@ -20,10 +20,9 @@ const ThisDay = ({ index, year, averageColor, audioFrame, palette }) => {
 	const cover = staticFile('/cover.jpg');
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
-	const darkColor = hexSorter.sortColors(palette, 'mostBrightColor')[
-		palette.length - 1
-	];
-	const brightColor = hexSorter.sortColors(palette, 'mostBrightColor')[1];
+	const sortedColors = hexSorter.sortColors(palette, 'mostBrightColor');
+	const darkColor = sortedColors[palette.length - 1];
+	const brightColor = sortedColors[1];
 
 	const easing = Easing.bezier(0.37, 0, 0.63, 1);
 

@@ -22,7 +22,8 @@ const Promo = ({ index, audioFrame, averageColor, type, palette }) => {
 	const cover = staticFile('/cover.jpg');
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
-	const brightColor = hexSorter.sortColors(palette, 'mostBrightColor')[0];
+	const sortedColors = hexSorter.sortColors(palette, 'mostBrightColor');
+	const brightColor = sortedColors[0];
 
 	const easing = Easing.bezier(0.37, 0, 0.63, 1);
 
