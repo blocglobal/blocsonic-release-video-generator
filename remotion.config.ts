@@ -40,6 +40,7 @@ Config.Bundling.overrideWebpackConfig((currentConfiguration) => {
 
 Config.Preview.setMaxTimelineTracks(30);
 Config.Rendering.setConcurrency(4);
+Config.Rendering.setQuality(50);
 Config.Output.setOverwriteOutput(true);
 Config.Output.setCodec('h264');
 Config.Output.setCrf(23);
