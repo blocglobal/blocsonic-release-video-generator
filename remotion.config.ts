@@ -1,6 +1,6 @@
-import { Config } from 'remotion';
+import {Config} from '@remotion/cli/config';
 
-Config.Bundling.overrideWebpackConfig((currentConfiguration) => {
+Config.overrideWebpackConfig((currentConfiguration) => {
 	return {
 		...currentConfiguration,
 		module: {
@@ -38,10 +38,10 @@ Config.Bundling.overrideWebpackConfig((currentConfiguration) => {
 	};
 });
 
-Config.Preview.setMaxTimelineTracks(30);
-Config.Rendering.setConcurrency(4);
-Config.Output.setOverwriteOutput(true);
-Config.Output.setCodec('h264');
-Config.Output.setCrf(30);
+Config.setMaxTimelineTracks(30);
+Config.setConcurrency(4);
+Config.setOverwriteOutput(true);
+Config.setCodec('h264');
+Config.setCrf(30);
 
-Config.Puppeteer.setTimeoutInMilliseconds(150000);
+Config.setDelayRenderTimeoutInMilliseconds(150000);
